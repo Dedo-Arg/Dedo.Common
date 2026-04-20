@@ -16,12 +16,16 @@
     <Product>Dedo.Common Library</Product>
     <Description>Librería común compartida para microservicios DEDO. Incluye modelos base, utilidades y funcionalidades compartidas.</Description>
     <PackageTags>dedo;common;microservices;shared;library</PackageTags>
-    <RepositoryUrl>https://github.com/dedo/common</RepositoryUrl>
+    <RepositoryUrl>https://github.com/battistoniramiro/Dedo.Common</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/battistoniramiro/Dedo.Common</PackageProjectUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include=".github\workflows\publish-nuget.yml" />
     <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
