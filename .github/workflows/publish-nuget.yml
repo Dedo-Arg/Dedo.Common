@@ -24,12 +24,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: |
-          dotnet nuget update source github-dedo \
-            --username battistoniramiro \
-            --password ${{ secrets.NUGET_GITHUB_TOKEN }} \
-            --store-password-in-clear-text
-          dotnet restore
+        run: dotnet restore
 
       - name: Build
         run: dotnet build --configuration Release --no-restore
