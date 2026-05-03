@@ -24,9 +24,14 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
-        env:
-          GITHUB_TOKEN: ${{ secrets.NUGET_GITHUB_TOKEN }}
+        run: |
+          dotnet nuget add source \
+            --username battistoniramiro \
+            --password ${{ secrets.NUGET_GITHUB_TOKEN }} \
+            --store-password-in-clear-text \
+            --name github-dedo \
+            "https://nuget.pkg.github.com/battistoniramiro/index.json" || true
+          dotnet restore
 
       - name: Build
         run: dotnet build --configuration Release --no-restore
