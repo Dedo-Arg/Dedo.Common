@@ -25,12 +25,10 @@ jobs:
 
       - name: Restore dependencies
         run: |
-          dotnet nuget add source \
+          dotnet nuget update source github-dedo \
             --username battistoniramiro \
             --password ${{ secrets.NUGET_GITHUB_TOKEN }} \
-            --store-password-in-clear-text \
-            --name github-dedo \
-            "https://nuget.pkg.github.com/battistoniramiro/index.json" || true
+            --store-password-in-clear-text
           dotnet restore
 
       - name: Build
