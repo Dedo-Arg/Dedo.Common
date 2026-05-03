@@ -23,7 +23,7 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
-     - name: Restore dependencies
+      - name: Restore dependencies
         run: dotnet restore
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
