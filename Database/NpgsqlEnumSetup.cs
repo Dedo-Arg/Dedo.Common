@@ -15,8 +15,6 @@ public static class NpgsqlEnumSetup
     public static NpgsqlDataSourceBuilder RegisterEnums(
         NpgsqlDataSourceBuilder builder)
     {
-        // En Npgsql 9+ el schema se especifica solo con el nombre del tipo
-        // El schema "public" es el default — no hace falta especificarlo
         builder.MapEnum<UserRole>("user_role");
         builder.MapEnum<VerificationStatus>("verification_status");
         builder.MapEnum<PaymentStatus>("payment_status");
